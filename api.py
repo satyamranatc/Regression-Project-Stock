@@ -1,17 +1,17 @@
 import requests
 import pandas as pd
 
-Companies = ["IBM","AAPL"]
+Companies = ["GOOG","MSFT","AAPL","JPM","IBM","GS","TSLA"]
 
 
-for Compnay in Companies:
+for Company in Companies:
     # API URL
-    url = f"https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol={Compnay}&interval=5min&apikey=O6DMM9OMXYOG6E9V&#39;"
+    url = f"https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol={Company}&interval=5min&apikey=O6DMM9OMXYOG6E9V&#39;"
 
     # Get the data
     r = requests.get(url)
     data = r.json()
-    print(data)
+    # print(data)
 
     # Extract the time series data
     time_series = data["Time Series (5min)"]
@@ -33,4 +33,4 @@ for Compnay in Companies:
     # print(df)
 
 
-    df.to_csv(f"./Data/{Compnay}_STOCK_DATA.csv",index=False)
+    df.to_csv(f"./Data/{Company}_STOCK_DATA.csv",index=False)
