@@ -1,7 +1,7 @@
 import requests
 import pandas as pd
 
-Companies = ["GOOG","MSFT","AAPL","JPM","IBM","GS","TSLA"]
+Companies = ["GOOG","MSFT","AAPL","JPM","IBM","GS","TSLA","AMZN"]
 
 
 for Company in Companies:
